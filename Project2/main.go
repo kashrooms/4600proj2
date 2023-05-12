@@ -85,6 +85,11 @@ func handleInput(w io.Writer, input string, exit chan<- struct{}) error {
 		return builtins.PrintWorkingDirectory(args...)
 	case "echo":
 		return builtins.PrintEcho(args...)
+	case "source":
+		if len(args) == 0 {
+			return fmt.Errorf("source: missing file operand")
+		}
+		return builtins.SourceFile(args[0])
 	}
 
 	return executeCommand(name, args...)
