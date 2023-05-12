@@ -14,7 +14,7 @@ func Exit(args ...string) error {
 
 	switch len(args) {
 		case 0:
-			return os.Exit()
+			return os.Exit(0)
 		case 1:
 			return os.Exit(args[1])
 		default:
