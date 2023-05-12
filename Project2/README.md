@@ -44,3 +44,6 @@ A GitHub link to your project which includes:
 - `README.md` <- describes anything needed to build (optional)
 - `main.go` <- your shell
 - `builtins package` <- each command should have it's own file (for readability)
+
+###
+to use source.go file type in go run main.go and then run source test_script.sh to run the test file
