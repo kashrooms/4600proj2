@@ -17,10 +17,11 @@ func PrintEcho(args ...string) error {
 			return fmt.Errorf("%w: expected one or more arguments (echo)", ErrInvalidArgCount)
 		default:
 			switch args[0] {
-				case "-n": // change to home directory if available
+				case "-n": 
 					return fmt.Println(args[1:])
 				default:
 				return fmt.Print(args[0:])
 			}
+		return nil
 	}
 }
