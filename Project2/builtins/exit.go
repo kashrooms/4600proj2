@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"os"
+	"strconv"
 )
 
 var (
@@ -12,12 +13,14 @@ var (
 
 func Exit(args ...string) error {
 
+	exitCode, _ := strconv.Atoi(args[1])
+
 	switch len(args) {
 		case 0:
-			return os.Exit(0)
+			os.Exit(0)
 		case 1:
-			return os.Exit(args[1])
-		default:
-			return fmt.Errorf("%w: expected 0 or 1 arguments", ErrInvalidArgCount)
+			os.Exit(exitCode)
 	}
+	
+	return fmt.Errorf("%w: expected 0 or 1 arguments", ErrInvalidArgCount)
 }
